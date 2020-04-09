@@ -1,0 +1,31 @@
+.tags{
+    width: 20%;
+    height: 80px;
+    margin-left: 40%;
+}
+
+
+.body
+{
+    background-color:#001f3f ;
+    
+}
+
+.container1{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.display
+{
+    display: block;
+}
+.ndisplay{
+    display: none;
+}
+
+
+.aaa:hover{
+    opacity: 0.8;
+    pointer-events: fill;
+}

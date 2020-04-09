@@ -1,0 +1,36 @@
+<div style="text-align: center;font-family: Georgia, 'Times New Roman', Times, serif;color: white;"><h1><b>CHECK STOCK</b></h1></div>
+<div class="container1">
+
+    <form>
+        <div class="row">
+            <div class="input-group">
+                <!-- <label style="color: white;font-weight: bold;margin-left: 20px;margin-right: 10px;" for="aa">SEARCH</label> -->
+                <input style="margin-left: 18px;margin-right: 18px;" id="aa" type="text" ng-model="na.name" class="form-control" placeholder="Search">
+                <!-- <div class="input-group-btn">
+                  <button class="btn btn-default" type="submit">
+                    <i class="glyphicon glyphicon-search"></i>
+                  </button>
+                </div> -->
+              </div>
+        </div>
+        
+      </form>
+    
+      <br>
+    <table class="table table-dark table-striped">
+        <tr>
+          <td ng-click="clickfunc('id')">ID</td>
+
+            <td ng-click="clickfunc('name')">NAME</td>
+            <td ng-click="clickfunc('noofitems')">NOOFITEMS</td>
+            <td ng-click="clickfunc('amount')">AMOUNT</td>
+        </tr>
+        <tr ng-repeat="item in items | orderBy:order:reverse | filter:na" class="repeat-animation">
+          <td>{{item.id | uppercase}}</td>
+           
+            <td>{{item.name | uppercase}}</td>
+            <td>{{item.noofitems}}</td>
+            <td>{{item.amount | currency:'Rs '}}</td>
+        </tr>
+    </table>
+</div>

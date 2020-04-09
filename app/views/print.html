@@ -1,0 +1,61 @@
+<div style="text-align: center;font-family: Georgia, 'Times New Roman', Times, serif;color: white;"><h1><b>PRINT BILL</b></h1></div>
+<div class="container1">
+
+    <form>
+        <div class="row">
+            <div class="input-group">
+                <input style="margin-left: 18px;margin-right: 18px;" id="aa" type="text" ng-model="na.name" class="form-control" placeholder="Search">
+              </div>
+        </div>
+        
+    </form>
+    
+      <br>
+    <table class="table table-dark table-striped">
+        <tr>
+            <td ng-click="clickfunc('name')">NAME</td>
+            <td ng-click="clickfunc('noofitems')">NOOFITEMS</td>
+            <td ng-click="clickfunc('amount')">AMOUNT</td>
+            <td>ADD TO CART</td>
+        </tr>
+        <tr ng-repeat="item in items | orderBy:order:reverse | filter:na" class="repeat-animation">
+            <td>{{item.name | uppercase}}</td>
+            <td>{{item.noofitems}}</td>
+            <td>{{item.amount | currency:'Rs '}}</td>
+            
+            <td >
+                <button ng-class="item.status1" ng-click="addtocart(item.id)">
+                    ADD
+                </button>
+                <button ng-class="item.status2" ng-click="addtocart(item.id)" disabled>
+                    ADD
+                </button>
+                </td>
+        </tr>
+    </table>
+</div>
+<!-- <br>
+<p style="color: white;">id:{{ids}}</p>
+<br> -->
+<br><br><br>
+
+<div style="text-align: center;font-family: Georgia, 'Times New Roman', Times, serif;color: white;"><h1><b>CART</b></h1></div>
+<br>
+<div class="container1">
+
+    <table class="table table-dark table-striped">
+        <tr>
+            <td ng-click="clickfunc('name')">NAME</td>
+            <td ng-click="clickfunc('noofitems')">NOOFITEMS</td>
+            <td ng-click="clickfunc('amount')">AMOUNT</td>
+            <td>TOTAL</td>
+        </tr>
+        <tr ng-repeat="i in cart | orderBy:order:reverse | filter:na" class="repeat-animation">
+            <td>{{i.name | uppercase}}</td>
+            <td>{{i.noofitems}}</td>
+            <td>{{i.amount | currency:'Rs '}}</td>
+            <td>{{  i.noofitems*i.amount | currency:'Rs '}}  </td>
+
+    </table>
+    
+</div>
